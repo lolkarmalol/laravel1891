@@ -89,3 +89,5 @@ Route::put('curso/{curso}',[CursoController::class,'update'])->name('curso.updat
 Route::get('product/listar', [ProductController::class, 'index'])->name('product.index');
 Route::get('product/frm_producto',[ProductController::class,'create']);
 Route::post('product/crearProducto',[ProductController::class,'store'])->name('produc.store');
+
+//---------------------------------------------------------------------------------------------------//
