@@ -23,9 +23,16 @@ Route::get('/', function () {
 });
 
 
+//---------------------------------------------------------------------------------------------------//
+use App\Http\Controllers\CursoController;
+
+Route::get('/curso/consultas', [CursoController::class, 'consultasEloquent']);
+//ruta
+//http://localhost:8000/curso/consultas
 
 
-
+/*
+//---------------------------------------------------------------------------------------------------//
 Route::get('/formularioaprendiz', [ApprenticeController::class, 'create']);
 Route::post('crearAprendiz', [ApprenticeController::class, 'store'])->name('apprentice.store');
 
@@ -91,3 +98,4 @@ Route::get('product/frm_producto',[ProductController::class,'create']);
 Route::post('product/crearProducto',[ProductController::class,'store'])->name('produc.store');
 
 //---------------------------------------------------------------------------------------------------//
+*/
