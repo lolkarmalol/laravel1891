@@ -26,6 +26,17 @@ Route::get('/', function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/formularioaprendiz', [ApprenticeController::class, 'create']);
 Route::post('crearAprendiz', [ApprenticeController::class, 'store'])->name('apprentice.store');
 
@@ -91,3 +102,6 @@ Route::get('product/frm_producto',[ProductController::class,'create']);
 Route::post('product/crearProducto',[ProductController::class,'store'])->name('produc.store');
 
 //---------------------------------------------------------------------------------------------------//
+use App\Http\Controllers\RoleUserController;
+Route::get('usuario/asociar_rol',[RoleUserController::class,'asociar']);
+Route::post('usuario/asociar_rol/store',[RoleUserController::class,'store'])->name('role_user.store');

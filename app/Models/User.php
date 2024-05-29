@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -33,15 +32,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    // Relacion Uno a Muchos con Post
-    public function posts(){
-        return $this->hasMany('App\Models\Post');//RECUPERAR LA COLECCION DE POST QUE PERTENECEN A ESTE USUARIO
-    }
-
-
-
-
-
     /**
      * The attributes that should be cast.
      *
@@ -51,4 +41,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Relationship with Role model (many-to-many).
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    /**
+     * Relationship with Post model (one-to-many).
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
