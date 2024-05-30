@@ -4,11 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Curso;
-
+use App\Models\Teacher;
+use App\Models\Student;
+use App\Models\Module;
 
 class CursoController extends Controller
 {
+    public function consultasEloquent()
+    {
+        $students = Student::all();
+        $teachers = Teacher::all();
+        $modules = Module::all();
 
+        return view('curso.consultas', [
+            'students' => $students,
+            'teachers' => $teachers,
+            'modules' => $modules,
+        ]);
+    }
+}
+
+
+/*
     public function index(){
         $cursos = Curso::orderBy('id','desc')->get();
         return view('curso.lista',compact('cursos'));
@@ -48,6 +65,6 @@ class CursoController extends Controller
         $curso->save();
         return redirect()->route('curso.index');
     }
+*/
 
 
-}

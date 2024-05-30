@@ -23,6 +23,15 @@ Route::get('/', function () {
 });
 
 
+//---------------------------------------------------------------------------------------------------//
+use App\Http\Controllers\CursoController;
+
+Route::get('/curso/consultas', [CursoController::class, 'consultasEloquent']);
+//ruta
+//http://localhost:8000/curso/consultas
+
+
+<<<<<<< HEAD
 
 
 
@@ -35,8 +44,10 @@ Route::get('/', function () {
 
 
 
-
-
+=======
+/*
+//---------------------------------------------------------------------------------------------------//
+>>>>>>> 14716095182b428ffe04043f23eecac671d6de39
 Route::get('/formularioaprendiz', [ApprenticeController::class, 'create']);
 Route::post('crearAprendiz', [ApprenticeController::class, 'store'])->name('apprentice.store');
 
@@ -102,6 +113,10 @@ Route::get('product/frm_producto',[ProductController::class,'create']);
 Route::post('product/crearProducto',[ProductController::class,'store'])->name('produc.store');
 
 //---------------------------------------------------------------------------------------------------//
+<<<<<<< HEAD
 use App\Http\Controllers\RoleUserController;
 Route::get('usuario/asociar_rol',[RoleUserController::class,'asociar']);
 Route::post('usuario/asociar_rol/store',[RoleUserController::class,'store'])->name('role_user.store');
+=======
+*/
+>>>>>>> 14716095182b428ffe04043f23eecac671d6de39
