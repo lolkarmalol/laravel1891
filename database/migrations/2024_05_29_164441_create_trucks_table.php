@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('trucks', function (Blueprint $table) {
             $table->id();
-            $table->string('Modelo');
-            $table->string('Matricula');
-            $table->string('Potencia');
-            $table->string('tipo');
+            $table->string('model');
+            $table->string('Tuition');
+            $table->string('Power');
+            $table->string('guy');
             $table->timestamps();
         });
     }

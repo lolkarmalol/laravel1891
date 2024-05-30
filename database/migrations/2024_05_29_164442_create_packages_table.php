@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('Codigo');
-            $table->string('Descripcion');
-            $table->string('Destinatario');
-            $table->string('Direccion');
+            $table->string('code');
+            $table->string('description');
+            $table->string('addressee');
+            $table->string('address');
             $table->timestamps();
         });
     }

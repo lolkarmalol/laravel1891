@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('truckers', function (Blueprint $table) {
             $table->id();
+            $table->string('dni');
+            $table->string('population');
+            $table->string('name');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('salary');
+            $table->unsignedBigInteger('package_id')->nullable();
+            $table->foreign('package_id')
+                ->references('id')
+                ->on('packages')
+                ->onDelete('set null');
             $table->timestamps();
         });
     }
