@@ -14,9 +14,10 @@ class Trucker extends Model
         return $this->belongsTo('App\Models\Package', 'package_id');
     }
 
+
     public function truck()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Truck::class);
     }
 
 }

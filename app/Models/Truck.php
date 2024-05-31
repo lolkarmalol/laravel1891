@@ -10,7 +10,7 @@ class Truck extends Model
     use HasFactory;
     public function trucker()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Trucker::class);
     }
 
 }
