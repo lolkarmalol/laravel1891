@@ -9,28 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('truck_trucker_tabla', function (Blueprint $table) {
+        Schema::create('truck_trucker', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('truck_id')->nullable();
-            $table->unsignedBigInteger('trucker_id')->nullable();
-
-            $table->foreign('truck_id')
-            ->references('id')
-            ->on('trucks')->onDelete('cascade');
-
-            $table->foreign('trucker_id')
-            ->references('id')
-            ->on('truckers')->onDelete('cascade');
-
+            $table->unsignedBigInteger('trucker_id');
+            $table->unsignedBigInteger('truck_id');
             $table->timestamps();
 
+        });
 
-
-
-
+        Schema::table('truck_trucker', function (Blueprint $table) {
+            $table->foreign('trucker_id')->references('id')->on('truckers')->onDelete('cascade');
+            $table->foreign('truck_id')->references('id')->on('trucks')->onDelete('cascade');
         });
     }
 
@@ -39,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('truck_trucker_tabla');
+        Schema::dropIfExists('truck_trucker');
     }
 };

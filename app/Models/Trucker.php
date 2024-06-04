@@ -15,9 +15,9 @@ class Trucker extends Model
     }
 
 
-    public function truck()
+    public function trucks()
     {
-        return $this->belongsToMany(Truck::class);
+        return $this->belongsToMany(Truck::class, 'truck_trucker', 'trucker_id', 'truck_id');
     }
 
 }

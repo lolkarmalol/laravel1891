@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Truck extends Model
 {
     use HasFactory;
-    public function trucker()
+    public function truckers()
     {
-        return $this->belongsToMany(Trucker::class);
+        return $this->belongsToMany(Trucker::class, 'truck_trucker', 'truck_id', 'trucker_id');
     }
 
 }
