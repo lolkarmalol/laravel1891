@@ -22,6 +22,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\TruckerController;
+use App\Http\Controllers\TruckController;
+use App\Http\Controllers\TruckTruckerController;
+
+// Rutas para Packages
+Route::get('Truck_Trucker/packages', [PackageController::class, 'create']);
+Route::post('/packages/store', [PackageController::class, 'store'])->name('packages.store');
+
+// Rutas para Truckers
+Route::get('Truck_Trucker/truckers', [TruckerController::class, 'create']);
+Route::post('/truckers/store', [TruckerController::class, 'store'])->name('truckers.store');
+
+// Rutas para Trucks
+Route::get('Truck_Trucker/trucks', [TruckController::class, 'create']);
+Route::post('/trucks/store', [TruckController::class, 'store'])->name('trucks.store');
+
+// Rutas para asociar Trucks y Truckers
+Route::get('Truck_Trucker/asociar_Truck_Trucker', [TruckTruckerController::class, 'asociar']);
+Route::post('Truck_Trucker/asociar_Truck_Trucker/store', [TruckTruckerController::class, 'store'])->name('Truck_Trucker.store');
+
 
 //---------------------------------------------------------------------------------------------------//
 use App\Http\Controllers\CursoController;
